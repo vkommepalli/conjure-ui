@@ -1,0 +1,103 @@
+<md-content ng-controller="searchController" id="content" layout="column" class="fillHeight" >
+    <md-table-container flex>
+        {{showSessionError()}}
+        <table md-table md-progress="promise">
+            <thead fix-head md-head>
+            <tr md-row>
+                <th md-column aria-label="Company Code">Company Code</th>
+                <th md-column md-numeric aria-label="Statement Group">Statement Group</th>
+                <th md-column md-numeric aria-label="Statement">Statement</th>
+                <th md-column md-numeric aria-label="Processing Method">Processing Method</th>
+                <th md-column md-numeric aria-label="Date In">Date In</th>
+                <th md-column md-numeric aria-label="Informatica">Informatica</th>
+                <th md-column md-numeric aria-label="EDT Run">EDT Run</th>
+                <th md-column md-numeric aria-label="EDT Errors">EDT Errors</th>
+                <th md-column md-numeric aria-label="Inforce Comparison">Inforce Comparison</th>
+                <th md-column md-numeric aria-label="Payment Rec/Req">Payment Rec/Req</th>
+                <th md-column md-numeric aria-label="Premium Payment">Premium Payment</th>
+                <th md-column md-numeric aria-label="Approved">Approved</th>
+                <th md-column md-numeric aria-label="Post to GL">Post to GL</th>
+                <th md-column md-numeric aria-label="Processing Sheet">Processing Sheet</th>
+                <th md-column md-numeric aria-label="Discrepancy">Discrep</th>
+                <th md-column md-numeric aria-label="Sign Off">Sign Off</th>
+                <th md-column md-numeric></th>
+            </tr>
+            </thead>
+            <tbody md-body>
+            <tr md-row class="{{statement.signOff ? 'signed-off' : ''}}" ng-repeat="statement in statements">
+                <td md-cell id="{{statement.statementUUID}}companyCode"><md-icon ng-show="statement.signOff" md-font-set="material-icons">&#xE61A;</md-icon>{{statement.companyCode}}</td>
+                <td md-cell id="{{statement.statementUUID}}statementGroupNumber">{{statement.statementGroupNumber}}</td>
+                <td md-cell id="{{statement.statementUUID}}dueDate">{{statement.dueDate}}
+                    <md-icon class="warning-icon" ng-show="{{!statement.dueDate}}" md-font-set="material-icons">&#xE002;<md-tooltip md-direction="top">?</md-tooltip></md-icon>
+                </td>
+                <td md-cell id="{{statement.statementUUID}}processingMethod">{{statement.processingMethod}}</td>
+                <td md-cell id="{{statement.statementUUID}}dateIn">{{statement.dateIn}}</td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}informatica" state="statement.informaticaStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}edtRun" state="statement.edtRunStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}edtErrors" state="statement.edtErrorStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}inforceComparison" state="statement.inforceCompareStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}paymentRecReq" state="statement.pyRecReqStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}premiumPayments" state="statement.premiumPayStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}approved" state="statement.approvedStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}postToGL" state="statement.postGlStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <ira-status-icon id="{{statement.statementUUID}}processingSheet" state="statement.processingSheetStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <md-icon id="{{statement.statementUUID}}discrepWarningIcon"
+                             class="warning-icon"
+                             ng-show="statement.signOff && !statement.discrepStepFinished"
+                             aria-label="Discrepancy Information Needed">
+                        &#xE002;
+                        <md-tooltip>Discrepancy Information Needed</md-tooltip>
+                    </md-icon>
+                    <ira-status-icon id="{{statement.statementUUID}}discrepancy" state="statement.discrepStepFinished"></ira-status-icon>
+                </td>
+                <td md-cell>
+                    <md-icon id="{{statement.statementUUID}}signOff" ng-show="{{statement.signOff}}" md-font-set="material-icons">&#xE877;</md-icon>
+                </td>
+                <td md-cell>
+                    <md-menu md-position-mode="target-right target">
+                        <md-button aria-label="More" class="md-icon-button md-button" type="button"
+                                   id="{{statement.statementUUID}}OpenMenuButton" ng-click="openMenu($mdOpenMenu, $event)">
+                            <md-icon md-font-set="material-icons">&#xE5D4;</md-icon>
+                        </md-button>
+                        <md-menu-content class="editButton-container">
+                            <md-menu-item>
+                                <md-button aria-label="View Details" id="{{statement.statementUUID}}EditDetailsButton" ng-click="editDetails($event, statement)">
+                                    <md-icon md-font-set="material-icons md-menu-align-target">&#xE254;</md-icon>
+                                    View Details
+                                </md-button>
+                            </md-menu-item>
+                            <md-menu-item ng-show="{{statement.signOff && statement.hasNext && !statement.nextStatementActivatedStepFinished && selectedAccountingPeriod.isCurrentAccountingPeriod}}">
+                                <md-button  id="{{statement.statementUUID}}AddNextStatementButton" ng-click="addNextStatementDetails(statement)">
+                                    <md-icon md-font-set="material-icons md-menu-align-target">&#xE02E;</md-icon>
+                                    Add Next Statement
+                                </md-button>
+                            </md-menu-item>
+                        </md-menu-content>
+                    </md-menu>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </md-table-container>
+</md-content>
+
+

@@ -1,0 +1,29 @@
+{
+  "name": "conjure-ui",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "angular-aria": "latest",
+    "angular-animate": "latest",
+    "angular-material": "^1.1.1",
+    "angular-clipboard": "^1.4.2",
+    "angular-material-data-table": "^0.10.9",
+    "material-design-icons": "^2.2.3",
+    "moment": "^2.13.0",
+    "restangular": "^1.5.2",
+    "underscore": "^1.8.3",
+    "angular-route": "^v1.5.7",
+    "moment-timezone": "^0.5.4",
+    "angular-cookies": "^v1.5.7",
+    "ng-csv": "^v0.3.6",
+    "angular-fixed-table-header": "^v0.2.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "latest"
+  },
+  "appPath": "app",
+  "moduleName": "conjure-ui",
+  "resolutions": {
+    "angular": "1.5.7"
+  }
+}

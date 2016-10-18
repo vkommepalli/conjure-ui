@@ -1,0 +1,5 @@
+{
+  "apiEndpoint": "http://stldiradock01.rgare.net:8084/api",
+  "environment": "Prod",
+  "iraBaseUrl": "http://localhost:8080/Ira/"
+}

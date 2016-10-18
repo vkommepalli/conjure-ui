@@ -1,0 +1,195 @@
+/*
+========================
+Feature(s):
+Description: Ira - Dashboard Overview and Details Screen
+Author: Andrew Blackwell - WWT Asynchrony Labs
+Date: 09.02.16
+
+Table of Contents
+---------------------------
+#Variables
+#Global Elements
+#Dashboard Table Styling
+#Dashboard Details Screen
+
+======================== */
+/*
+========================
+#Variables
+======================== */
+/*
+========================
+#Global Elements
+======================== */
+.ErrorDialog {
+  background-color: #fff !important; }
+  .ErrorDialog h3 {
+    margin: 0;
+    position: relative;
+    text-indent: 26px; }
+  .ErrorDialog i {
+    color: #F44336 !important;
+    position: absolute;
+    left: -26px;
+    top: -1px; }
+  .ErrorDialog md-dialog-actions {
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgba(0, 0, 0, 0.12); }
+
+.globalToolbar .md-subhead {
+  padding-right: 9px; }
+
+.md-sidenav-left .md-button {
+  text-align: left;
+  padding-left: 16px; }
+
+.md-sidenav-left button {
+  text-transform: capitalize !important; }
+
+.fillHeight {
+  height: 100%; }
+
+.editButton-container {
+  padding: 0; }
+
+table.md-table md-icon, md-dialog md-icon {
+  color: #4A4A4A; }
+
+.btnOutline-light {
+  color: #ffffff;
+  border: 2px solid #ffffff; }
+  .btnOutline-light:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important; }
+
+.btnOutline-dark {
+  color: #4A4A4A !important;
+  border: 2px solid #4A4A4A; }
+  .btnOutline-dark:hover {
+    background-color: rgba(255, 255, 255, 0.05) !important; }
+  .btnOutline-dark md-icon {
+    color: #4A4A4A !important; }
+
+#accountingPeriodSelect {
+  margin: 0;
+  padding: 0; }
+  #accountingPeriodSelect .md-select-value {
+    color: #ffffff !important;
+    border-bottom: 2px solid #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 37px;
+    text-transform: uppercase !important;
+    margin: 0;
+    padding: 0 0 0 9px; }
+    #accountingPeriodSelect .md-select-value:hover {
+      background-color: rgba(0, 0, 0, 0.05) !important;
+      color: #ffffff !important; }
+    #accountingPeriodSelect .md-select-value:focus span {
+      color: #ffffff !important; }
+    #accountingPeriodSelect .md-select-value:active span {
+      color: #ffffff !important; }
+
+md-toast.successToast .md-toast-content {
+  background-color: #333333; }
+
+md-toast.errorToast .md-toast-content {
+  background-color: #F44336; }
+  md-toast.errorToast .md-toast-content i {
+    padding-right: 4px; }
+
+/*
+========================
+#Dashboard Table Styling
+======================== */
+table.md-table tr:nth-child(even) td {
+  background: #f9f9f9 !important; }
+
+table.md-table tr:nth-child(odd) td {
+  background: #ffffff !important; }
+
+table.md-table tr.signed-off td {
+  background: #FFE57F !important; }
+
+table.md-table th.md-column {
+  overflow: hidden;
+  white-space: normal;
+  padding: 0 18px 9px 18px !important;
+  vertical-align: bottom !important;
+  font-size: 10px !important;
+  text-align: left !important; }
+
+table.md-table td.md-cell {
+  overflow: hidden;
+  white-space: nowrap !important;
+  font-size: 12px;
+  text-align: left !important;
+  padding: 0 0px 0 18px !important; }
+
+md-dialog._md-transition-in {
+  opacity: 1;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  -webkit-transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1); }
+
+.statementLocked md-icon {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH"; }
+
+/*
+========================
+#Dashboard Details Screen
+======================== */
+md-dialog {
+  border-radius: 0px !important;
+  background: none !important; }
+  md-dialog md-dialog-content {
+    background: #ffffff !important; }
+
+.full-width {
+  width: 100%; }
+
+md-input-container .md-errors-spacer {
+  display: none; }
+
+.ira-disabled td strong, .ira-disabled td.md-cell, .ira-disabled md-icon {
+  color: #cccccc !important; }
+
+.warning-icon {
+  color: #ff9800 !important; }
+
+.no-outline {
+  outline: none; }
+
+label md-icon:hover {
+  cursor: pointer; }
+
+td#informaticaDetails md-input-container {
+  margin: 0; }
+
+button#discrepancyClear, button#processingSheetClear, #discrepRow button {
+  margin: 0;
+  padding: 0;
+  width: auto; }
+
+button.md-datepicker-button {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  color: #4A4A4A !important; }
+
+#processingSheetRow td.md-cell label, #discrepRow td.md-cell label {
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  max-width: 150px;
+  display: inline-block; }
+
+#statementTable {
+  padding: 0; }
+
+/*# sourceMappingURL=main.css.map */
