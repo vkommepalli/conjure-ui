@@ -1,16 +1,13 @@
 'use strict';
 angular.module('conjure-ui')
-    .controller('searchController', function ($scope, $rootScope, $mdDialog, SearchService) {
+    .controller('searchController', function ($scope, $rootScope, DonorService) {
 
 
-        $scope.results = [];
+        $scope.donors = [];
 
-        $scope.findNeeds = function() {
-            SearchService.findNeeds(function (results) {
-                results.forEach(function (result) {
-                    //incase any logic need to alter data
-                });
-                $scope.results = results;
+        $scope.getDonors = function () {
+            DonorService.getDonors(function (donors) {
+                $scope.donors = donors;
             });
         };
 

@@ -1,8 +1,8 @@
 'use strict';
-app.factory('DonarService', function(Restangular){
+app.factory('DonorService', function(Restangular){
     var service ={};
     service.getDonors = function(callback) {
-        Restangular.one("http://registrationservice.cfapps.io/donors").get().then(callback);
+        Restangular.one("donors").get(null,{},{'Access-Control-Allow-Origin': ''}).then(callback);
     };
     return service;
 });

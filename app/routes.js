@@ -1,6 +1,5 @@
 'use strict';
-angular.module('conjure-ui')
-  .config(['$routeProvider', '$locationProvider',
+angular.module('conjure-ui').config(['$routeProvider', '$locationProvider',
   function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
