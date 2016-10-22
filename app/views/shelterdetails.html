@@ -1,34 +1,115 @@
 <md-dialog class="shelterDetails-dialog" flex="70">
-    <md-dialog-content ng-controller="shelterDetailsController">
-        <md-toolbar class="md-primary">
-            <div class="md-toolbar-tools">
-                <h2 class="md-headline" id="shelterDetailHeader">ShelterName: {{shelter.shelterName}} | {{shelter.availableBeds}} | {{statement.unAvailableBeds}}</h2>
-                <div flex layout="row" layout-align="end center" id="shelterHead">
-                    <div>
-                        <md-button ng-click="cancel()" class="md-icon-button" aria-label="Close" ng-disabled="false">
-                            <md-icon md-font-set="material-icons">&#xE5CD;</md-icon>
-                        </md-button>
+            <md-dialog-content ng-controller="shelterDetailsController">
+                <md-toolbar class="md-primary">
+                    <div class="md-toolbar-tools">
+                        <h2 class="md-headline" id="shelterDetailHeader">ShelterName: {{shelter.shelterName}} | {{shelter.availableBeds}} | {{statement.unAvailableBeds}}</h2>
+                        <div flex layout="row" layout-align="end center" id="shelterHead">
+                            <div>
+                                <md-button ng-click="cancel()" class="md-icon-button" aria-label="Close" ng-disabled="false">
+                                    <md-icon md-font-set="material-icons">&#xE5CD;</md-icon>
+                                </md-button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
         </md-toolbar>
 
- <!--       <div class="gridListdemoBasicUsage">
-            <h1>User List</h1>
-            <div class='md-padding' layout="row" layout-wrap>
-                <md-card style="width: 300px;" ng-repeat="user in users">
+       <div class="gridListdemoBasicUsage">
+            <h3>Bed Availability</h3>
+             <div class='md-padding' layout="row" layout-wrap>
+                      <md-card style="width: 100px;" >
 
-                    <md-card-content style="background: green;">
-                        <h2>{{user}}</h2>
-                        <p>Available</p>
-                    </md-card-content>
-                    <div class="md-actions" layout="row" layout-align="end center">
-                        <md-button>Reserve</md-button>
-                        <md-button>View</md-button>
-                    </div>
-                </md-card>
-            </div>
-        </div>-->
+                          <md-card-content style="background: green;">
+                              <h2>{{user}}</h2>
+                              <p>Available</p>
+                          </md-card-content>
+                          <div class="md-actions" layout="row" layout-align="center">
+
+                              <md-menu md-position-mode="target-center target">
+                                  <md-menu-content class="editButton-container" >
+                                      <md-menu-item >
+                                          <md-button> <md-icon md-font-set="material-icons">add_circle</md-icon></md-button>
+                                      </md-menu-item>
+                                      <md-menu-item >
+                                          <md-button > <md-icon md-font-set="material-icons">&#xE254;</md-icon></md-button>
+                                      </md-menu-item>
+                                  </md-menu-content>
+
+
+                              </md-menu>
+
+                          </div>
+                      </md-card>
+                 <md-card style="width: 100px;" >
+
+                     <md-card-content style="background: green;">
+                         <h2>{{user}}</h2>
+                         <p>Available</p>
+                     </md-card-content>
+                     <div class="md-actions" layout="row" layout-align="center">
+
+                         <md-menu md-position-mode="target-center target">
+                             <md-menu-content class="editButton-container" >
+                                 <md-menu-item >
+                                     <md-button> <md-icon md-font-set="material-icons">add_circle</md-icon></md-button>
+                                 </md-menu-item>
+                                 <md-menu-item >
+                                     <md-button > <md-icon md-font-set="material-icons">&#xE254;</md-icon></md-button>
+                                 </md-menu-item>
+                             </md-menu-content>
+
+
+                         </md-menu>
+
+                     </div>
+                 </md-card>
+                 <md-card style="width: 100px;" >
+
+                     <md-card-content style="background: green;">
+                         <h2>{{user}}</h2>
+                         <p>Available</p>
+                     </md-card-content>
+                     <div class="md-actions" layout="row" layout-align="center">
+
+                         <md-menu md-position-mode="target-center target">
+                             <md-menu-content class="editButton-container" >
+                                 <md-menu-item >
+                                     <md-button> <md-icon md-font-set="material-icons">add_circle</md-icon></md-button>
+                                 </md-menu-item>
+                                 <md-menu-item >
+                                     <md-button > <md-icon md-font-set="material-icons">&#xE254;</md-icon></md-button>
+                                 </md-menu-item>
+                             </md-menu-content>
+
+
+                         </md-menu>
+
+                     </div>
+                 </md-card>
+                 <md-card style="width: 100px;" >
+
+                     <md-card-content style="background: green;">
+                         <h2>{{user}}</h2>
+                         <p>Available</p>
+                     </md-card-content>
+                     <div class="md-actions" layout="row" layout-align="center">
+
+                         <md-menu md-position-mode="target-center target">
+                             <md-menu-content class="editButton-container" >
+                                 <md-menu-item >
+                                     <md-button> <md-icon md-font-set="material-icons">add_circle</md-icon></md-button>
+                                 </md-menu-item>
+                                 <md-menu-item >
+                                     <md-button > <md-icon md-font-set="material-icons">&#xE254;</md-icon></md-button>
+                                 </md-menu-item>
+                             </md-menu-content>
+
+
+                         </md-menu>
+
+                     </div>
+                 </md-card>
+                  </div>
+        </div>
 
 
 
