@@ -3,14 +3,12 @@
     <table md-table>
         <thead md-head>
         <tr md-row style="background: lightgray">
-            <th aria-label="Shelter Name" align="left">Facility</th>
+            <th aria-label="Shelter Name" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facility</th>
+            <th aria-label="Address" align="left">Address</th>
             <th md-numeric aria-label="Total Beds"  align="left">Total Capacity</th>
             <th md-numeric aria-label="Available" align="left">Available</th>
             <th md-numeric aria-label="Distence" align="left">Distance</th>
-            <th md-numeric aria-label="Amenities" align="left">Amenities</th>
-            <!--
-                        <th md-column md-numeric></th>
-            -->
+            <th md-numeric aria-label="Amenities" align="left">&nbsp;&nbsp;&nbsp;&nbsp;Amenities</th>
         </tr>
         </thead>
         <tbody md-body>
@@ -27,6 +25,7 @@
                     </md-menu-content>
                 </md-menu>
                 </td>
+            <td md-cell id="address">{{shelter.address}}</td>
             <td md-cell id="totalBeds">{{shelter.totalBeds}}</td>
             <td md-cell id="availableBeds">{{shelter.available}}</td>
             <td md-cell id="distance">{{shelter.distance}}</td>
