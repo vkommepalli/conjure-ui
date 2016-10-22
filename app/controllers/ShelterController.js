@@ -12,6 +12,14 @@ angular.module('conjure-ui')
       }
 
         //$scope.donors = donors
+        ShelterService.getShelters(function (sheltersData) {
+            //var shelters = [];
+            //var shelter = {};
+
+            $scope.shelters = sheltersData._embedded.shelters;
+            ;
+
+        });
 
         $scope.getShelters = function () {
 
@@ -24,7 +32,7 @@ angular.module('conjure-ui')
                 controller: $scope.dialogHelper,
                 scope: $scope,
                 preserveScope: true,
-                templateUrl: '../views/shelterdetails.html',
+                templateUrl: '../views/shelterDetails.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose: false,

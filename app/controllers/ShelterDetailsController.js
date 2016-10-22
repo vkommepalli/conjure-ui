@@ -8,6 +8,10 @@ angular.module('conjure-ui')
             $scope.shelter = data;
         };
 
+        $scope.selected = function (cardId) {
+            $scope.shelter = data;
+        };
+
 
 
     });
