@@ -32,7 +32,7 @@ angular.module('conjure-ui')
                 controller: $scope.dialogHelper,
                 scope: $scope,
                 preserveScope: true,
-                templateUrl: '../views/shelterDetails.html',
+                templateUrl: '../views/shelterdetails.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
                 clickOutsideToClose: false,
