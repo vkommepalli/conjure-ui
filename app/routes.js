@@ -18,9 +18,7 @@ angular.module('conjure-ui').config(['$routeProvider', '$locationProvider',
         controllerAs: 'shelterController'
       })
       .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'shelterController',
-        controllerAs: 'shelterController'
+        templateUrl: 'views/about.html'
       }).when('/', {
       templateUrl: 'views/shelterlist.html',
       controller: 'shelterController',
