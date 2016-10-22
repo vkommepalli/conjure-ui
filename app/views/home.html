@@ -1,13 +1,48 @@
 <md-toolbar class="md-primary globalToolbar">
-    <div class="md-toolbar-tools">
-         <h1 class="md-headline">
+    <!--<div class="md-toolbar-tools">
+        <h1 class="md-headline">
             <span id="toolbarTitle">   Conjure    </span>
         </h1>
-    </div>
-    <md-tabs>
-        <md-tab label="About"></md-tab>
-        <md-tab label="Clients" md-on-select="onTabSelected(tab)"></md-tab>
-        <md-tab label="Facilities" md-on-select="showFailities()"></md-tab>
-        <md-tab label="Resevations"></md-tab>
-    </md-tabs>
+    </div>-->
+    Conjure
+    <md-fab-toolbar md-direction="left">
+
+        <md-fab-trigger class="align-with-text">
+            <md-button aria-label="menu" class="md-fab md-primary">
+                <md-icon md-font-icon="material-icons">menu</md-icon>
+            </md-button>
+        </md-fab-trigger>
+
+        <md-toolbar>
+            <md-fab-actions class="md-toolbar-tools">
+                <md-button aria-label="About" href="#/about">About
+                </md-button>
+                <md-button aria-label="Clients" href="#/clients">Clients
+                </md-button>
+                <md-button aria-label="Facilities" href="#/facilities">Facilities
+                </md-button>
+                <md-button aria-label="Resevations" href="#/reservations">Resevations
+                </md-button>
+            </md-fab-actions>
+        </md-toolbar>
+    </md-fab-toolbar>
+
 </md-toolbar>
+
+<!--<md-toolbar class="md-primary globalToolbar">-->
+    <!--<div class="md-toolbar-tools">-->
+        <!--<md-content class="md-padding">-->
+            <!--<md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links">-->
+                <!--<md-nav-item md-nav-href="#/about" name="page1">About</md-nav-item>-->
+                <!--<md-nav-item md-nav-href="#/clients" name="page1">Clients</md-nav-item>-->
+                <!--<md-nav-item md-nav-href="#/facilities" name="page1">Facilities</md-nav-item>-->
+                <!--<md-nav-item md-nav-href="#/resevations" name="page1">Resevations</md-nav-item>-->
+            <!--</md-nav-bar>-->
+        <!--</md-content>-->
+    <!--</div>-->
+<!--</md-toolbar>-->
+
+
+
+
+

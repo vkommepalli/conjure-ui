@@ -2,17 +2,19 @@
 angular.module('conjure-ui')
     .controller('shelterController', function ($scope, $rootScope, $mdDialog, ShelterService) {
 
+      setShelters();
+
+      function setShelters(){
+        ShelterService.getShelters(function (sheltersData) {
+          $scope.shelters = sheltersData._embedded.shelters;
+
+        });
+      }
+
         //$scope.donors = donors
 
         $scope.getShelters = function () {
-            ShelterService.getShelters(function (sheltersData) {
-                //var shelters = [];
-                //var shelter = {};
 
-                $scope.shelters = sheltersData._embedded.shelters;
-                ;
-
-            });
         };
 
         $scope.getShelterDetails = function (event, shelter) {
