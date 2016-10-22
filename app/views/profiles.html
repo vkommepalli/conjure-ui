@@ -1,11 +1,30 @@
 <div ng-app="MyApp" class="gridListdemoBasicUsage" ng-controller="profileController">
+    <div>
+        <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
+            <div>
+                <md-input-container>
+                    <label>LastName</label>
+                    <input ng-model="user.title">
+                </md-input-container>
 
+                <md-input-container>
+                    <md-button class="md-icon-button"
+                               id="searchClient"
+                               aria-label="Client Search">
+                        <md-icon class="no-outline" md-font-set="material-icons">find_in_page
+                            <md-tooltip>Search</md-tooltip>
+                        </md-icon>
+                    </md-button>
+                </md-input-container>
+            </div>
+        </md-content>
+    </div>
     <div class='md-padding' layout="row" layout-wrap>
         <md-card style="width: 300px;" ng-repeat="profile in profiles">
 
             <md-card-content style="background: lightgray;">
-                <h4><b style="bold">Client Id:</b> {{profile.clientId}}</h4>
                 <h4>{{profile.firstName}} {{profile.lastName}}</h4>
+                <h4><b style="bold">Client Id:</b> {{profile.uuid}}</h4>
                 <h4>Date of Birth: {{profile.dob}}</h4>
                 <div layout-align="end">
                     <a align="right" class="link" href="#/profiles">more..</a>
