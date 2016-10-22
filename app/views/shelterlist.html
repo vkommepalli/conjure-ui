@@ -1,0 +1,32 @@
+<md-content ng-controller="shelterController" id="content" layout="column" class="fillHeight" >
+    <div>
+        <md-button class="md-raised"  ng-click="getShelterAvailablity()">GetShelters</md-button>
+    </div>
+
+
+    <table md-table>
+        <thead md-head>
+        <tr md-row>
+            <th md-column aria-label="Shelter Name">Shelter Name</th>
+            <th md-column md-numeric aria-label="Total Beds">Total Beds</th>
+            <th md-column md-numeric aria-label="Available">Available</th>
+            <th md-column md-numeric aria-label="UnAvailable">UnAvailable</th>
+            <th md-column md-numeric aria-label="Distence">Distence</th>
+            <th md-column md-numeric aria-label="Amenities">Amenities</th>
+            <!--
+                        <th md-column md-numeric></th>
+            -->
+        </tr>
+        </thead>
+        <tbody md-body>
+        <tr md-row  ng-repeat="shelter in shelters">
+            <td md-cell id="shelterName">{{shelter.shelterName}}</td>
+            <td md-cell id="totalBeds">{{shelter.totalBeds}}</td>
+            <td md-cell id="availableBeds">{{shelter.availableBeds}}</td>
+            <td md-cell id="unAvailableBeds">{{shelter.unAvailableBeds}}</td>
+            <td md-cell id="distance">{{shelter.distance}}</td>
+            <td md-cell id="amenities"><span>Amenities</span></td>
+        </tr>
+        </tbody>
+    </table>
+</md-content>
