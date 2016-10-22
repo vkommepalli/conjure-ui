@@ -3,7 +3,7 @@
         <md-button class="md-raised"  ng-click="getShelters()">GetShelters</md-button>
     </div>
 
-
+    <md-table-container layout-padding>
     <table md-table>
         <thead md-head>
         <tr md-row>
@@ -20,7 +20,24 @@
         </thead>
         <tbody md-body>
         <tr md-row  ng-repeat="shelter in shelters">
-            <td md-cell id="shelterName">{{shelter.shelterName}}</td>
+            <td md-cell id="shelterName">
+                <md-menu md-position-mode="target-right target">
+                     <md-menu-content class="editButton-container">
+                        <md-menu-item>
+                            <md-button aria-label="Edit Details" id="{{shelter.uuid}}EditDetailsButton" ng-click="getShelterDetails($event, shelter)">
+                                <md-icon md-font-set="material-icons md-menu-align-target">&#xE254;</md-icon>
+                                {{shelter.shelterName}}
+                            </md-button>
+                        </md-menu-item>
+                         <md-menu-item ng-show="false">
+                             <md-button aria-label="View Details" id="{{shelter.uuid}}ViewDetailsButton" ng-click="getShelterDetails($event, shelter)">
+                                 <md-icon md-font-set="material-icons md-menu-align-target">&#xE254;</md-icon>
+                                 {{shelter.shelterName}}
+                             </md-button>
+                         </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                </td>
             <td md-cell id="totalBeds">{{shelter.totalBeds}}</td>
             <td md-cell id="availableBeds">{{shelter.available}}</td>
             <td md-cell id="unAvailableBeds">{{shelter.unavailable}}</td>
@@ -29,4 +46,5 @@
         </tr>
         </tbody>
     </table>
+        </md-table-container>
 </md-content>
