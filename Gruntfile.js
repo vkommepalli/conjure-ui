@@ -482,22 +482,6 @@ module.exports = function (grunt) {
         'files': {
           '.tmp/scripts/config.js': ['config_src/config.js.tpl']
         }
-      },
-      prod: {
-        options: {
-          data: require('./config_src/prod.json')
-        },
-        'files': {
-          '.tmp/scripts/config.js': ['config_src/config.js.tpl']
-        }
-      },
-      demo: {
-        options: {
-          data: require('./config_src/demo.json')
-        },
-        'files': {
-          '.tmp/scripts/config.js': ['config_src/config.js.tpl']
-        }
       }
     },
 

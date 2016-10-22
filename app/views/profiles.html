@@ -1,0 +1,18 @@
+<div ng-app="MyApp" class="gridListdemoBasicUsage" ng-controller="profileController">
+
+    <div class='md-padding' layout="row" layout-wrap>
+        <md-card style="width: 300px;" ng-repeat="profile in profiles">
+
+            <md-card-content style="background: lightgray;">
+                <h4><b style="bold">Client Id:</b> {{profile.clientId}}</h4>
+                <h4>{{profile.firstName}} {{profile.lastName}}</h4>
+                <h4>Date of Birth: {{profile.dob}}</h4>
+                <div layout-align="end">
+                    <a align="right" class="link" href="#/profiles">more..</a>
+                </div>
+            </md-card-content>
+
+        </md-card>
+    </div>
+</div>
+

@@ -7,11 +7,11 @@ angular.module('conjure-ui').config(['$routeProvider', '$locationProvider',
         controller: 'shelterController',
         controllerAs: 'shelterController'
       })
-      .when('/clients', {
-        templateUrl: 'views/shelterlist.html',
-        controller: 'shelterController',
-        controllerAs: 'shelterController'
-      })
+     .when('/profiles', {
+             templateUrl: 'views/profiles.html',
+             controller: 'profileController',
+             controllerAs: 'profileController'
+        })
       .when('/reservations', {
         templateUrl: 'views/shelterlist.html',
         controller: 'shelterController',
@@ -30,3 +30,5 @@ angular.module('conjure-ui').config(['$routeProvider', '$locationProvider',
 
     $locationProvider.html5Mode(false);
   }]);
+
+
