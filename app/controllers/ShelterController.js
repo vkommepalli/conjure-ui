@@ -1,20 +1,21 @@
 'use strict';
 angular.module('conjure-ui')
-    .controller('shelterController', function ($scope, $rootScope,$mdDialog, ShelterService) {
+    .controller('shelterController', function ($scope, $rootScope, $mdDialog, ShelterService) {
 
         //$scope.donors = donors
 
-         $scope.getShelters = function () {
-             ShelterService.getShelters(function (sheltersData) {
-                 //var shelters = [];
-                 //var shelter = {};
+        $scope.getShelters = function () {
+            ShelterService.getShelters(function (sheltersData) {
+                //var shelters = [];
+                //var shelter = {};
 
-                 $scope.shelters = sheltersData._embedded.shelters;;
+                $scope.shelters = sheltersData._embedded.shelters;
+                ;
 
-             });
-         };
+            });
+        };
 
-        $scope.getShelterDetails = function(event, shelter) {
+        $scope.getShelterDetails = function (event, shelter) {
             $scope.uuid = shelter.uuid;
             $scope.shelter = shelter;
             $mdDialog.show({
@@ -24,11 +25,22 @@ angular.module('conjure-ui')
                 templateUrl: '../views/shelterdetails.html',
                 parent: angular.element(document.body),
                 targetEvent: event,
-                clickOutsideToClose:false,
+                clickOutsideToClose: false,
                 fullscreen: true
             });
         };
 
+        $scope.dialogHelper = function dialogHelper($scope, $rootScope, $mdDialog) {
+            $scope.hide = function() {
+                $mdDialog.hide();
+                $scope.getShelters();
+            };
+
+            $scope.cancel = function() {
+                $mdDialog.cancel();
+                $scope.getShelters();
+            };
+        };
 
         //$scope.getShelterAvailablity = function () {
         //    var shelters = [];
