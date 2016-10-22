@@ -5,8 +5,12 @@ angular.module('conjure-ui')
         //$scope.donors = donors
 
          $scope.getShelters = function () {
-             ShelterService.getShelters(function (shelters) {
-                 $scope.shelters = shelters;
+             ShelterService.getShelters(function (sheltersData) {
+                 //var shelters = [];
+                 //var shelter = {};
+
+                 $scope.shelters = sheltersData._embedded.shelters;;
+
              });
          };
         $scope.getShelterAvailablity = function () {

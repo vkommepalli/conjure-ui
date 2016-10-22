@@ -1,6 +1,6 @@
 <md-content ng-controller="shelterController" id="content" layout="column" class="fillHeight" >
     <div>
-        <md-button class="md-raised"  ng-click="getShelterAvailablity()">GetShelters</md-button>
+        <md-button class="md-raised"  ng-click="getShelters()">GetShelters</md-button>
     </div>
 
 
@@ -22,8 +22,8 @@
         <tr md-row  ng-repeat="shelter in shelters">
             <td md-cell id="shelterName">{{shelter.shelterName}}</td>
             <td md-cell id="totalBeds">{{shelter.totalBeds}}</td>
-            <td md-cell id="availableBeds">{{shelter.availableBeds}}</td>
-            <td md-cell id="unAvailableBeds">{{shelter.unAvailableBeds}}</td>
+            <td md-cell id="availableBeds">{{shelter.available}}</td>
+            <td md-cell id="unAvailableBeds">{{shelter.unavailable}}</td>
             <td md-cell id="distance">{{shelter.distance}}</td>
             <td md-cell id="amenities"><span>Amenities</span></td>
         </tr>
