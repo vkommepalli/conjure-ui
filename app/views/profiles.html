@@ -4,13 +4,13 @@
             <div>
                 <md-input-container>
                     <label>LastName</label>
-                    <input ng-model="user.title">
+                    <input ng-model="searchName">
                 </md-input-container>
 
                 <md-input-container>
                     <md-button class="md-icon-button"
                                id="searchClient"
-                               aria-label="Client Search">
+                               aria-label="Client Search" ng-click="searchProfiles()">
                         <md-icon class="no-outline" md-font-set="material-icons">find_in_page
                             <md-tooltip>Search</md-tooltip>
                         </md-icon>

@@ -27,7 +27,7 @@
                 <md-input-container>
                     <md-button class="md-icon-button"
                                id="reserveUnit"
-                               aria-label="reserveUnit" ng-onclick="reserveUnit()">
+                               aria-label="reserveUnit" ng-click="reserveUnit()">
 
                         <md-icon class="no-outline" md-font-set="material-icons">check_circle
                             <md-tooltip>Reserve</md-tooltip>
@@ -41,8 +41,8 @@
                     <h3>Bed Availability</h3>
                 <div class='md-padding' layout="row" layout-wrap>
                         <md-card ng-repeat="cell in cells">
-                            <md-card-content style="background: {{$cell.reserved ? 'lightcoral' : 'lightgreen'}}"
-                                             ng-click="selectedCell(cell.id)">
+                            <md-card-content style="background: {{cell.reserved ? 'lightcoral' : 'lightgreen'}}"
+                                             ng-click="selectedCell(cell)">
                               <strong>{{cell.cellId}}</strong>
                             </md-card-content>
                         </md-card>

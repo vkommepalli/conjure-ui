@@ -29,5 +29,12 @@ angular.module('conjure-ui')
             ;
 
         });
-         }
-    );
+
+        $scope.searchProfiles = function(){
+            ProfileService.searchProfiles($scope.searchName, function (profileData) {
+                $scope.profiles = profileData;
+
+            });
+        };
+
+});

@@ -29,17 +29,23 @@ angular.module('conjure-ui')
 
         });
         $scope.selectedCellId = '';
+        $scope.selectedCell = {};
 
 
-        $scope.selectedCell = function (cellId) {
-            $scope.selectedCellId = cellId;
+        $scope.selectedCell = function (cell) {
+            $scope.selectedCellId = cell.id;
+            $scope.selectedCell=cell;
         };
 
 
         $scope.reserveUnit = function () {
-             ShelterService.reserveUnit($scope.selectedCellId, $scope.selectedClientId,function () {
-                        //refresh the page here
-                        window.console.log('Refresh the page here..');
+             ShelterService.reserveUnit($scope.selectedCell.id,$scope.selectedClientId,$scope.selectedCell.shelterId,$scope.selectedCell.date,$scope.selectedCell.cellId,function () {
+                 ShelterService.getShelterDetails($scope.uuid,function (data) {
+                     $scope.shelter = data;
+                     $scope.cells = data.cells;
+                     $scope.selectedCellId = '';
+                     $scope.selectedClientId='';
+                 })
                     });
         };
 
