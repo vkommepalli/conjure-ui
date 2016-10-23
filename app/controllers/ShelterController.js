@@ -2,28 +2,22 @@
 angular.module('conjure-ui')
     .controller('shelterController', function ($scope, $rootScope, $mdDialog, ShelterService) {
 
-      setShelters();
 
-      function setShelters(){
+
+      function getShelters(){
         ShelterService.getShelters(function (sheltersData) {
-          $scope.shelters = sheltersData._embedded.shelters;
+          $scope.shelters = sheltersData;
 
         });
       }
 
         //$scope.donors = donors
         ShelterService.getShelters(function (sheltersData) {
-            //var shelters = [];
-            //var shelter = {};
-
-            $scope.shelters = sheltersData._embedded.shelters;
+            $scope.shelters = sheltersData;
             ;
 
         });
 
-        $scope.getShelters = function () {
-
-        };
 
 
         $scope.getShelterDetails = function (event, shelter) {
@@ -44,12 +38,12 @@ angular.module('conjure-ui')
         $scope.dialogHelper = function dialogHelper($scope, $rootScope, $mdDialog) {
             $scope.hide = function() {
                 $mdDialog.hide();
-                $scope.getShelters();
+                getShelters();
             };
 
             $scope.cancel = function() {
                 $mdDialog.cancel();
-                $scope.getShelters();
+                getShelters();
             };
         };
 
