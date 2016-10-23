@@ -54,7 +54,7 @@
 <md-content>
     <md-list flex>
         <div class="md-2-line" layout="row">
-            <div class="md-toolbar-tools" flex="10">
+            <div class="md-toolbar-tools" flex="15">
                 <span>Facility</span>
             </div>
             <div class="md-toolbar-tools" flex="15">
@@ -69,14 +69,14 @@
             <div class="md-toolbar-tools" flex="15">
                 <span>Distance</span>
             </div>
-            <div class="md-toolbar-tools" flex="30">
+            <div class="md-toolbar-tools" flex="25">
                 <span>Amenities</span>
             </div>
         </div>
         <div>
             <md-list-item class="md-2-line" ng-repeat="shelter in shelters"
                           ng-click="getShelterDetails($event, shelter)">
-                <div class="md-list-item-text" flex="10">
+                <div class="md-list-item-text" flex="15">
                     <h4>{{shelter.shelterName}}</h4>
                 </div>
                 <div class="md-list-item-text" flex="15">
@@ -91,7 +91,7 @@
                 <div class="md-list-item-text" flex="15">
                     <h4>{{shelter.distance}}</h4>
                 </div>
-                <div class="md-list-item-text" flex="30">
+                <div class="md-list-item-text" flex="25">
                     <div layout="row">
                         <div ng-if="shelter.shelterAmentities.hasKitchen">
                             <i class="material-icons">kitchen</i>
