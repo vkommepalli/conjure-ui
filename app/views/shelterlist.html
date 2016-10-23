@@ -7,7 +7,7 @@
             <th aria-label="Address" align="left">Address</th>
             <th md-numeric aria-label="Total Beds"  align="left">Total Capacity</th>
             <th md-numeric aria-label="Available" align="left">Available</th>
-            <th md-numeric aria-label="Distence" align="left">Distance</th>
+            <th md-numeric aria-label="Distance" align="left">Distance</th>
             <th md-numeric aria-label="Amenities" align="left">&nbsp;&nbsp;&nbsp;&nbsp;Amenities</th>
         </tr>
         </thead>
@@ -32,16 +32,16 @@
             <td md-cell id="amenities">
                 <div layout="row" layout-align="start center">
                     <div ng-if="shelter.shelterAmentities.hasKitchen">
-                        <i class="material-icons">kitchen</i>
+                        <i class="material-icons">kitchen <md-tooltip>Kitchen</md-tooltip></i>
                     </div>
-                <div ng-if="shelter.shelterAmentities.hasKitchen">
-                    <i class="material-icons">airline_seat_flat</i>
+                <div ng-if="shelter.shelterAmentities.hasTransportation">
+                    <i class="material-icons">directions_bus<md-tooltip>Transport</md-tooltip></i>
                 </div>
                 <div ng-if="shelter.shelterAmentities.hasBath">
-                    <i class="material-icons">wifi</i>
+                    <i class="material-icons">wifi<md-tooltip>Wifi</md-tooltip></i>
                 </div>
-                    <div ng-if="shelter.shelterAmentities.hasBath">
-                        <i class="material-icons">wc</i>
+                    <div ng-if="shelter.shelterAmentities.hasLaundry">
+                        <i class="material-icons">wc<md-tooltip>Laundry</md-tooltip></i>
                     </div>
                 </div>
             </td>

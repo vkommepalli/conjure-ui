@@ -18,7 +18,7 @@
             <div>
                 <md-input-container>
                     <label>ClientId</label>
-                    <input ng-model="user.email" type="email">
+                    <input ng-model="selectedClientId" type="email">
                 </md-input-container>
                 <md-input-container >
                     <label>BunkId</label>
@@ -39,186 +39,12 @@
             <div class="gridListdemoBasicUsage">
                     <h3>Bed Availability</h3>
                 <div class='md-padding' layout="row" layout-wrap>
-                        <md-card >
-                            <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                              <strong>f1</strong>
+                        <md-card ng-repeat="cell in cells">
+                            <md-card-content style="getColor(cell.reserved)" ng-click="selectedCell(cell.id)">
+                              <strong>{{cell.id}}</strong>
                             </md-card-content>
                         </md-card>
-                        <md-card >
-                            <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                                <strong>f2</strong>
-                            </md-card-content>
-                        </md-card>
-                        <md-card >
-                            <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                                <strong>f3</strong>
-                            </md-card-content>
-                        </md-card>
-                        <md-card >
-                            <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                                <strong>f4</strong>
-                            </md-card-content>
-                        </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell1')">
-                            <strong>f1</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell2')">
-                            <strong>f2</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightgreen;" ng-click="selectedCell('cell3')">
-                            <strong>f3</strong>
-                        </md-card-content>
-                    </md-card>
-                    <md-card >
-                        <md-card-content style="background: lightcoral;" ng-click="selectedCell('cell4')">
-                            <strong>f4</strong>
-                        </md-card-content>
-                    </md-card>
+
 
                     </div>
                     </div>

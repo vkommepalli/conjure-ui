@@ -4,8 +4,8 @@ app.factory('ShelterService', function(Restangular){
     service.getShelters = function(callback) {
         Restangular.one("shelters").get().then(callback);
     };
-    service.getShelterDetails = function(uuid,callback) {
-        Restangular.one("shelters", uuid).get().then(callback);
+    service.getShelterDetails = function(uuid, callback) {
+        Restangular.one("shelterslist/" + uuid+"/"+ '2016-10-22').get().then(callback);
     };
     return service;
 });

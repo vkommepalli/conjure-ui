@@ -25,6 +25,7 @@ angular.module('conjure-ui')
 
         };
 
+
         $scope.getShelterDetails = function (event, shelter) {
             $scope.uuid = shelter.uuid;
             $scope.shelter = shelter;
