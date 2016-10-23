@@ -1,4 +1,4 @@
-<md-content ng-controller="shelterController" id="content" layout="column" class="fillHeight" >
+<!--<md-content ng-controller="shelterController" id="content" layout="column" class="fillHeight" >
     <md-table-container layout-padding>
     <table md-table>
         <thead md-head>
@@ -49,4 +49,66 @@
         </tbody>
     </table>
         </md-table-container>
+</md-content>-->
+
+<md-content>
+    <md-list flex>
+        <div class="md-2-line" layout="row">
+            <div class="md-toolbar-tools" flex="10">
+                <span>Facility</span>
+            </div>
+            <div class="md-toolbar-tools" flex="15">
+                <span>Address</span>
+            </div>
+            <div class="md-toolbar-tools" flex="15">
+                <span>Total Capacity</span>
+            </div>
+            <div class="md-toolbar-tools" flex="15">
+                <span>Available</span>
+            </div>
+            <div class="md-toolbar-tools" flex="15">
+                <span>Distance</span>
+            </div>
+            <div class="md-toolbar-tools" flex="30">
+                <span>Amenities</span>
+            </div>
+        </div>
+        <div>
+            <md-list-item class="md-2-line" ng-repeat="shelter in shelters"
+                          ng-click="getShelterDetails($event, shelter)">
+                <div class="md-list-item-text" flex="10">
+                    <h4>ABCDEF</h4>
+                </div>
+                <div class="md-list-item-text" flex="15">
+                    <h4>{{shelter.address}}</h4>
+                </div>
+                <div class="md-list-item-text" flex="15">
+                    <h4>{{shelter.totalBeds}}</h4>
+                </div>
+                <div class="md-list-item-text" flex="15">
+                    <h4>{{shelter.available}}</h4>
+                </div>
+                <div class="md-list-item-text" flex="15">
+                    <h4>{{shelter.distance}}</h4>
+                </div>
+                <div class="md-list-item-text" flex="30">
+                    <div layout="row">
+                        <div ng-if="shelter.shelterAmentities.hasKitchen">
+                            <i class="material-icons">kitchen</i>
+                        </div>
+                        <div ng-if="shelter.shelterAmentities.hasKitchen">
+                            <i class="material-icons">airline_seat_flat</i>
+                        </div>
+                        <div ng-if="shelter.shelterAmentities.hasBath">
+                            <i class="material-icons">wifi</i>
+                        </div>
+                        <div ng-if="shelter.shelterAmentities.hasBath">
+                            <i class="material-icons">wc</i>
+                        </div>
+                    </div>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+        </div>
+    </md-list>
 </md-content>
