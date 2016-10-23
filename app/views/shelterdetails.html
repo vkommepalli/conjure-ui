@@ -18,7 +18,7 @@
             <div>
                 <md-input-container>
                     <label>ClientId</label>
-                    <input ng-model="selectedClientId" type="email">
+                    <input ng-model="selectedClientId">
                 </md-input-container>
                 <md-input-container >
                     <label>BunkId</label>
@@ -26,8 +26,9 @@
                 </md-input-container>
                 <md-input-container>
                     <md-button class="md-icon-button"
-                               id="processingSheetClear"
-                               aria-label="Clear Processing Sheet File">
+                               id="reserveUnit"
+                               aria-label="reserveUnit" ng-onclick="reserveUnit()">
+
                         <md-icon class="no-outline" md-font-set="material-icons">check_circle
                             <md-tooltip>Reserve</md-tooltip>
                         </md-icon>
@@ -40,8 +41,9 @@
                     <h3>Bed Availability</h3>
                 <div class='md-padding' layout="row" layout-wrap>
                         <md-card ng-repeat="cell in cells">
-                            <md-card-content style="getColor(cell.reserved)" ng-click="selectedCell(cell.id)">
-                              <strong>{{cell.id}}</strong>
+                            <md-card-content style="background: {{$cell.reserved ? 'lightcoral' : 'lightgreen'}}"
+                                             ng-click="selectedCell(cell.id)">
+                              <strong>{{cell.cellId}}</strong>
                             </md-card-content>
                         </md-card>
 

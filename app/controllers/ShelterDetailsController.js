@@ -36,5 +36,13 @@ angular.module('conjure-ui')
         };
 
 
+        $scope.reserveUnit = function () {
+             ShelterService.reserveUnit($scope.selectedCellId, $scope.selectedClientId,function () {
+                        //refresh the page here
+                        window.console.log('Refresh the page here..');
+                    });
+        };
+
+
 
     });
